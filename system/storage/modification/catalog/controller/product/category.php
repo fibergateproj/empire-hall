@@ -690,6 +690,11 @@ class ControllerProductCategory extends Controller
             $data['footer'] = $this->load->controller('common/footer');
             $data['header'] = $this->load->controller('common/header');
 
+            foreach($data['products'] as $key=>$prod){
+                $new_price = number_format($prod['price'], 0, '.', ' ') . " UAH";
+                $data['products'][$key]['price'] = $new_price;
+            }
+
             $this->response->setOutput($this->load->view('product/' . $layout_template, $data));
         } else {
             $url = '';

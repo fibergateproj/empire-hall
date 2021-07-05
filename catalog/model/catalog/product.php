@@ -36,6 +36,8 @@ class ModelCatalogProduct extends Model {
 				'manufacturer'     => $query->row['manufacturer'],
 				'hide_price'     => $query->row['hide_price'],
 				'price'            => ($query->row['discount'] ? $query->row['discount'] : $query->row['price']),
+				//'price'            => number_format(($query->row['discount'] ? $query->row['discount'] : $query->row['price']), 0, ' ', ' '),
+				//'price'            => number_format($query->row['price'], 0, ' ', ' '),
 				'special'          => $query->row['special'],
 				'reward'           => $query->row['reward'],
 				'points'           => $query->row['points'],

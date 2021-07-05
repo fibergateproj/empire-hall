@@ -726,6 +726,11 @@ class ControllerProductProduct extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
+			echo "<pre>";
+			$new_price = number_format($data['price'], 0, '.', ' ') . " UAH";
+			$data['price'] = $new_price;
+			echo "</pre>";
+
 			$this->response->setOutput($this->load->view('product/'.$layout_template, $data));
 		} else {
 			$url = '';

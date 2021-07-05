@@ -304,7 +304,7 @@
         {% if attribute_groups or description %}
             <div class="info-box">
                 {% if attribute_groups %}
-                    <div class="info-box__item acardion__item active">
+                    <div class="info-box__item acardion__item">
                         <div class="info-box__title acardion__title">{{ tab_attribute }}</div>
                         <div style="height: auto;" class="info-box__inner acardion__inner">
                             {% for attribute_group in attribute_groups %}
@@ -320,22 +320,42 @@
                     </div>
                 {% endif %}
                 {% if description %}
-                    <div class="info-box__item">
+                    {# <div class="info-box__item acardion__item">
                         <div class="info-box__title info-box__title-descr acardion__title" style="pointer-events: none;">{{ tab_description }}</div>
                         <div class="info-box__inner" style="height: auto;">
                             <div class="info-box__content acardion__content">
                                 {{ description }}
                             </div>
                         </div>
+                    </div> #}
+                    <div class="info-box__item acardion__item">
+                        <div class="info-box__title acardion__title">{{ tab_description }}</div>
+                        <div class="info-box__inner acardion__inner" style="height: 223px;">
+                        <div class="info-box__content acardion__content">
+                             {{ description }}
+                        </div>
+                        </div>
                     </div>
                 {% endif %}
+                <div class="info-box__item acardion__item">
+                    <div class="info-box__title acardion__title">Отзывы</div>
+                    <div class="info-box__inner acardion__inner" style="height: 101px;">
+                    <div class="info-box__content acardion__content">
+                        <ul class="feedback-list">
+                        <li><div id="review"></div></li>
+                        <li>отзыв 2</li>
+                        <li>отзыв 3</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
             </div>
         {% endif %}
     </div>
 </div>
 
-                                                    {# <form class="form-horizontal" id="form-review">
-													  <div id="review"></div>
+                                                    <form class="form-horizontal" id="form-review">
+													  
 													  <h2>{{ text_write }}</h2>
 													  {% if (review_guest) %} 
 													  	<div class="form-default">
@@ -422,7 +442,7 @@
 													  {% else %} 
 													  	{{ text_login }} 
 													  {% endif %} 
-													</form> #}
+													</form>
 {% if products %}
     <div class="collection-products">
         <div class="collection-products__title">{{ text_related }}</div>
@@ -745,6 +765,8 @@ $('#button-review').on('click', function() {
     });
 });
 </script>
+{# <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script> #}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/2.2.1/js/bootstrap.min.js"></script>
 
 {% if ee_tracking %}
     {% if ee_create_click %}

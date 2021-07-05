@@ -36,8 +36,11 @@
 						<form class="checkout-block__form" id="order-info">
 							<div class="form-block">
 								<input class="main-input" type="text" value="{{ firstname }}" name="firstname">
+								<label class="form-label">{{ entry_firstname }}</label>
 								<label class="form-label">{{ entry_firstname }} {{ entry_lastname }}</label>
 							</div>
+							<div class="form-block">
+								<input class="main-input" type="text" value="{{ lastname }}" name="lastname">
 							<div class="form-block" style="display:none;">
 								<input class="main-input" type="text" value="{{ lastname }}" name="lastname" value="empty">
 								<label class="form-label">{{ entry_lastname }}</label>
@@ -46,6 +49,8 @@
 								<input class="main-input" type="tel" value="{{ telephone }}" name="telephone">
 								<label class="form-label">{{ entry_telephone }}</label>
 							</div>
+							<div class="form-block">
+								<input class="main-input" type="email" value="{{ email }}" name="email">
 							<div class="form-block" style="display:none;">
 								<input class="main-input" type="email" value="{{ email }}" name="email" value="empty@mail.com">
 								<label class="form-label">{{ entry_email }}</label>

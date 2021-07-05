@@ -102,6 +102,12 @@ class ControllerExtensionModuleFeatured extends Controller {
             }
         }
 
+        foreach($data['products'] as $key=>$prod){
+            //var_dump($prod);
+            $new_price = number_format($prod['price'], 0, '.', ' ') . " UAH";
+            $data['products'][$key]['price'] = $new_price;
+        }
+
 		return $this->load->view('extension/module/featured', $data);
 	}
 }
